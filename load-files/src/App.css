@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+}
+
+input,
+select,
+button,
+textarea {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  width: 650px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.zone {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  padding: 10px;
+  border: 2px solid black;
+  transition: all 0.18s ease-in;
+  cursor: pointer;
+}
+.zone:active {
+  transition: none;
+}
+.zone.drag {
+  border: 4px dotted black;
+  padding: 8px;
+}
+
+.input {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: none;
+}
