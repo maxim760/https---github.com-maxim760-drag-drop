@@ -1,0 +1,69 @@
+import React from "react";
+import "./App.css";
+
+function App() {
+  const [cardList, setCardList] = React.useState([
+    { id: 1, order: 3, text: "Карточка 3" },
+    { id: 2, order: 1, text: "Карточка 1" },
+    { id: 3, order: 2, text: "Карточка 2" },
+    { id: 4, order: 4, text: "Карточка 4" },
+  ]);
+
+// ПЕРЕД dragOver и drop - лушче e.preventDefault()
+
+  const handleDrag = () => { // просто когда вожу мышкой mouseMove
+    // console.log("handleDrag");
+  };
+
+  const handleDragStart = () => { // срабатывает 1 раз когда начинаю передвгиать
+    // console.log("handleDragStart");
+  };
+
+  const handleDragEnter = () => { // срабатывает когда начинаю передвигать и когда во время передвижения попадаю на другой обьект
+    // console.log("handleDragEnter");
+  };
+
+  const handleDragEnd = () => { // отпускаю обьект
+    // console.log("handleDragEnd");
+  };
+
+  const handleDragExit = () => { // ни разу не сработал, не знаю
+    // console.log("handleDragExit");
+  };
+
+  const handleDragLeave = () => { // выхожу за пределы обьекта мышкой, либо за пределы которого передвигаю либо за пределы любого , без разницы
+    // console.log("handleDragLeave");
+  };
+
+  const handleDragOver = () => { // когда нахожусь на люом обьекте в который можно перетащить, аналог mouseMove,но над обьектом, НЕ В ЛЮБОМ МЕСТЕ
+    console.log("handleDragOver");
+  };
+
+  const handleDrop = () => { // вроде когда отпускаю на допустимую цель
+    // console.log("handleDrop");
+  };
+
+  return (
+    <div className="app">
+      {cardList.map(({ id, text }) => (
+        <div
+          draggable={true}
+          className={"card"}
+          key={id}
+          onDrag={handleDrag}
+          onDragStart={handleDragStart}
+          onDragEnter={handleDragEnter}
+          onDragEnd={handleDragEnd}
+          onDragExit={handleDragExit}
+          onDragLeave={handleDragLeave}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+        >
+          {text}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
